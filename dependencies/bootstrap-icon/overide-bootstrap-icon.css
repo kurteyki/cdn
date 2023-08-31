@@ -1,0 +1,3 @@
+/* overide bootstrap icon */
+.bi-coin:before{content:""}
+.bi-coin{background-image:url("../../dependencies/bootstrap-icon/rupiah-icon.png");width:30px;display:inline-block;background-size:contain;background-repeat:no-repeat}

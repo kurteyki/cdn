@@ -1,0 +1,7 @@
+/* summernote */
+.note-frame {border-radius: 0 !important;}
+.note-editable{background:#fff}
+.note-modal-footer{text-align:right!important;height:initial!important}
+.note-modal-footer .note-btn{float:initial!important}
+.note-toolbar{position:sticky!important;top:0;z-index:1}
+.note-editor.fullscreen .note-toolbar{position:initial!important}

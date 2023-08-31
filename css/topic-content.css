@@ -1,0 +1,122 @@
+
+/**
+ * TOPIC SECTION SIDEBAR
+ * =====================
+ */
+.topic-section .nav-link{
+  display:block;padding:0.5rem 1rem;position:relative;margin-bottom:3px;/*border:2px solid #e7e9ed;*/
+  border-radius:4px
+}
+.topic-section .nav-link:hover {color: #93511e;}
+.topic-section .nav-link.active{
+  color:#93511e;background:#f1e2d7;/*border-left:3px solid #93511e;*/
+  font-weight:500
+}
+.topic-section .nav-link .nav-icon i{
+  border: 1px solid;
+  padding: 4px 6px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+/* topic section submenu */
+.topic-section .submenu{margin-left:7px}
+
+/* topic section submenu-toggle */
+.topic-section .submenu-toggle .submenu-arrow{position:absolute;right:1rem;top:0.7rem;color:#000000}
+.topic-section .submenu-toggle[aria-expanded="true"] .submenu-arrow{-ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";transform:rotate(90deg);-webkit-transform:rotate(90deg)}
+
+/* topic section submenu-link */
+.topic-section .submenu-link{color:#5d6778;margin-left:25px;padding:0.5rem 1rem;font-size:0.875rem;position:relative;display:block;margin-bottom:0}
+.topic-section .submenu-link:before{background-color:#f1e2d7;content:" ";display:inline-block;height:inherit;left:0;position:absolute;width:2px;height:100%;margin-top:-0.5rem}
+
+.topic-section .submenu-link:hover,
+.topic-section .submenu-link.active{color:#93511e}
+.topic-section .submenu-link:hover:before,
+.topic-section .submenu-link.active:before{background-color:#93511e} 
+/**
+ * END TOPIC SECTION SIDEBAR 
+ * ====================================================================
+ */
+
+/**
+ * TOPIC SECTION SIDEBAR MOBILE
+ * ============================
+ */
+.navbar-bottom{box-shadow:0rem 0rem 2rem 1rem rgba(0,0,0,.175)!important}
+.navbar-bottom .nav-button{/*  background:#f1e2d7;*/
+  padding:10px 10px;border-radius:0}
+
+
+/* topic-content */
+#post-content img{max-width:100%;cursor: pointer;}
+#post-content iframe{max-width:100%}
+#post-content h2.count{counter-reset:h3}
+#post-content h3.count:before{content:counter(h3) ".\0000a0";counter-increment:h3}
+#post-content h3.count{counter-reset:h4}
+#post-content blockquote{background:#f5f6fe;border-left:10px solid #343434;margin-bottom: 1rem;padding:0.5em 10px;quotes:"\201C""\201D""\2018""\2019"}
+#post-content blockquote:before{color:#343434;content:open-quote;font-size:4em;line-height:0.1em;margin-right:0.25em;vertical-align:-0.4em}
+#post-content blockquote p{display:inline}
+.font-content {font-size:18px;line-height:1.6em;letter-spacing:0}
+@media (max-width:768px){
+  .font-content{font-size:16px}
+}
+@media (max-width:576px){
+  .font-content{font-size:15px;line-height:1.6em;letter-spacing:0;font-weight:400;text-transform:none}
+}
+
+/* content-lock */
+#post-lock.blur{
+  filter: blur(3px);
+}
+#post-lock .mask {
+  background-color: rgb(255 255 255 / 80%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  -webkit-mask-image: -webkit-linear-gradient(transparent,#000 20px);
+  mask-image: linear-gradient(transparent,#000 28px);
+  pointer-events: none;
+  position: absolute;
+  /* width: calc(269px - var(--devsite-js-book-nav-scrollbar-width, 0px)); */
+  z-index: 1000;
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.4,0,.2,1);
+  transition: -webkit-transform .2s cubic-bezier(.4,0,.2,1);
+  transition: transform .2s cubic-bezier(.4,0,.2,1);
+  transition: transform .2s cubic-bezier(.4,0,.2,1),-webkit-transform .2s cubic-bezier(.4,0,.2,1);
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+#post-lock-message {
+  position: relative;
+  top: -10px;
+  z-index: 1001;
+  border-style: dashed;
+}
+
+/* toc (table of content) */
+#toc_container {background: #dfe0eb;}
+#toc_container a {color :#000;}
+#toc_container a:hover {color :#333;}
+
+/* topic next-prev */
+.pagination-lg .page-link{font-size:18px}
+@media (max-width:768px){.pagination-lg .page-link{font-size:16px}}
+@media (max-width:320px){.pagination-lg .page-link{font-size:15px}}
+
+/* back to top */
+#btn-back-to-top {
+  z-index: 1000; 
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  color: #fff;
+  background: #93511e;
+  width: 35px;
+  height: 35px;
+} 
+@media (min-width:768px){#btn-back-to-top{right: 10px;bottom: 20px}}

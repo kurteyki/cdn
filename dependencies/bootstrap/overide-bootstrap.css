@@ -1,0 +1,42 @@
+/* dropdown */
+.dropdown-menu{border-color:#e7e9ed;z-index: 99999;}
+.dropdown-menu .dropdown-item{padding:0.5rem 1rem}
+.dropdown-menu .dropdown-item:hover{color:#93511e}
+.dropdown-menu .dropdown-item:hover,.dropdown-menu .dropdown-item:focus{background:#f5f6fe; color:  #93511e}
+.dropdown-menu .dropdown-item.active,.dropdown-menu .dropdown-item:active{background:#f5f6fe;color: #93511e}
+.dropdown-divider{border-top-color:#e7e9ed;-webkit-opacity:1;-moz-opacity:1;opacity:1}
+.dropdown-toggle.no-toggle-arrow:after{display:none!important}
+
+/* button */
+button.close:focus{outline:none;box-shadow:none}
+.btn .bi{position:relative;top:0}
+.btn:focus,.btn.focus,.btn:hover{box-shadow:none!important;}
+.btn-disable {cursor: not-allowed;}
+
+/* form */
+.form-control{padding-top:0.6rem;padding-bottom:0.6rem;/*border-color:#e7e9ed;*/color:#5d6778}
+.form-control:focus{box-shadow:none;outline:none;color:#5d6778}
+
+/* link */
+.text-link{color:#515151}
+.text-link:hover{color:#93511e}
+
+/* navbar */
+.navbar-toggler:focus {box-shadow: none}
+.navbar-top a.nav-link:hover {color: #93511e !important;}
+#navbarSearch form {width: 75%}
+@media (max-width:768px){#navbarSearch form{width:100%;}}
+.search-navbar input,.search-navbar button{border-color:#ddd}
+.search-navbar input:focus{border-color:#ddd}
+.search-navbar button:disabled{color: #ddd; border-color: #ddd!important;}
+.search-navbar button:active{border-color:#ddd !important;color:#ddd !important}
+.search-navbar button:hover{background:none;border-color:#ddd;color:#ddd}
+
+/* pagination */
+.pagination > li > a{background-color:white;color:#009688}
+.pagination > li > a:focus,.pagination > li > a:hover,.pagination > li > span:focus,.pagination > li > span:hover{color:#5a5a5a;background-color:#eee;outline:none;box-shadow:none}
+.pagination > .active > a{color:white;background-color:#009688!important;border:solid 1px #009688!important}
+.pagination > .active > a:hover{background-color:#009688!important;border:solid 1px #009688}
+
+/* alert */
+.alert.over{border-radius:0;margin-left:-16px;margin-right:-16px}

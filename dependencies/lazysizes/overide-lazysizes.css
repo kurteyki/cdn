@@ -1,0 +1,3 @@
+/* lazysizes.js image */
+.opahcity{-webkit-filter:opacity(0);filter:opacity(0);transition:filter 400ms,-webkit-filter 400ms}
+.opahcity.lazyloaded{-webkit-filter:opacity(1);filter:opacity(1)}

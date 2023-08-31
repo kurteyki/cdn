@@ -1,0 +1,59 @@
+@font-face {
+    font-family: PolySans;
+    src: url(../fonts/PolySans-Bulky.woff2) format("woff2")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Inter;
+    font-style: oblique 0deg 10deg;
+    font-weight: 400 700;
+    src: url(../fonts/Inter.var.woff2?v=3.19) format("woff2")
+}
+
+@font-face {
+    font-family: JetBrains Mono;
+    src: url(../fonts/JetBrainsMono-Regular.woff2) format("woff2")
+}
+
+:root {
+    --font-primary: "Inter",system-ui,sans-serif;
+    --font-secondary: "PolySans","Inter",system-ui,sans-serif;
+    --font-mono: "JetBrains Mono",monospace;
+    --font-system-ui: system-ui,sans-serif;
+}
+
+/* global tag */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #404248;
+  font-family:  var(--font-primary);
+}
+h1,h2,h3,h4,h5,h6,{color: #252930;font-weight: 600}
+a{color:#93511e;text-decoration:none!important}
+a:hover{color:#6969ff}
+hr{background:#adb4c0}
+img{max-width: 100%}
+
+/* background */
+.bg-app {
+    background: #f2e9e2;
+/*  background: #f5f7fa;
+  background-color: #D6DBDC;
+  background-image: url(//lh3.ggpht.com/-hKAn5Ctu5SQ/T0jq84AjO2I/AAAAAAAAA30/FCdAnGLm_mM/s320/Page-BgSimpleGradient.jpg);
+  background-repeat: repeat-x;*/
+  width: 100%;    
+}
+
+/* button */
+.btn-main {background: #009688;border:none;}
+.btn-main:hover,.btn-main:focus,.btn-main:active {background-color: #17c9b8 !important;}
+
+/* ads */
+.ads-square{width:100%;height:300px;background:#528be7;color:#fff;line-height:300px;text-align:center;margin:auto}
+.ads-horizontal{width:100%;height:100px;background:#528be7;color:#fff;line-height:100px;text-align:center}
+
+footer {
+    font-family: var(--font-mono);
+}

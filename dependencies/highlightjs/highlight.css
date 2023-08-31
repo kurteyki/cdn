@@ -1,0 +1,42 @@
+/* pre code */
+pre {
+    display:grid;
+    font-size: 13px;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #ccc;
+}
+pre.over {margin-left: -16px;margin-right: -16px;}
+pre.scroll code {height: 300px; overflow: auto;}
+pre.scroll .hljs-copy-button {right: 18px;}
+pre.code-hide{height:340px;overflow-y:hidden}
+pre.code-hide code{overflow:hidden}
+pre.code-hide .hide-box{width:100%;background-image:linear-gradient(-180deg,rgba(255,255,255,0) 0%,#1a1a1a 100%);position:absolute;left:0;right:0;bottom:0;top:170px;z-index:10}
+pre.code-hide .hide-box .show-box{display:block;text-align:center;padding:50px;cursor:pointer;color:#fff}
+
+/**
+ * highlight-js number
+ */ 
+.hljs-ln-numbers {-webkit-touch-callout: none !important; -webkit-user-select: none !important; -khtml-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; text-align: center !important; color: #ccc !important; border-right: 1px solid #484242 !important; vertical-align: top !important; padding-right: 10px !important; padding-left: 10px !important;} 
+
+/* 
+* hljs monokai 
+* https://github.com/highlightjs/highlight.js/tree/main/src/styles
+* Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+*/
+.hljs tr td:nth-child(2) {padding-left: 5px;}
+.hljs {display: block; overflow-x: auto; padding: 0 0; background: #23241f; -webkit-text-size-adjust: none; } .hljs, .hljs-tag, .css .hljs-rule, .css .hljs-value, .aspectj .hljs-function, .css .hljs-function .hljs-preprocessor, .hljs-pragma {color: #f8f8f2; } .hljs-strongemphasis, .hljs-strong, .hljs-emphasis {color: #a8a8a2; } .hljs-bullet, .hljs-blockquote, .hljs-horizontal_rule, .hljs-number, .hljs-regexp, .alias .hljs-keyword, .hljs-literal, .hljs-hexcolor {color: #ae81ff; } .hljs-tag .hljs-value, .hljs-code, .hljs-title, .css .hljs-class, .hljs-class .hljs-title:last-child {color: #a6e22e; } .hljs-link_url {font-size: 80%; } .hljs-strong, .hljs-strongemphasis {font-weight: bold; } .hljs-emphasis, .hljs-strongemphasis, .hljs-class .hljs-title:last-child, .hljs-typename {font-style: italic; } .hljs-keyword, .ruby .hljs-class .hljs-keyword:first-child, .ruby .hljs-function .hljs-keyword, .hljs-function, .hljs-change, .hljs-winutils, .hljs-flow, .nginx .hljs-title, .tex .hljs-special, .hljs-header, .hljs-attribute, .hljs-symbol, .hljs-symbol .hljs-string, .hljs-tag .hljs-title, .hljs-value, .alias .hljs-keyword:first-child, .css .hljs-tag, .css .unit, .css .hljs-important {color: #f92672; } .hljs-function .hljs-keyword, .hljs-class .hljs-keyword:first-child, .hljs-aspect .hljs-keyword:first-child, .hljs-constant, .hljs-typename, .hljs-name, .css .hljs-attribute {color: #66d9ef; } .hljs-variable, .hljs-params, .hljs-class .hljs-title, .hljs-aspect .hljs-title {color: #f8f8f2; } .hljs-string, .css .hljs-id, .hljs-subst, .hljs-type, .ruby .hljs-class .hljs-parent, .hljs-built_in, .django .hljs-template_tag, .django .hljs-variable, .smalltalk .hljs-class, .django .hljs-filter .hljs-argument, .smalltalk .hljs-localvars, .smalltalk .hljs-array, .hljs-attr_selector, .hljs-pseudo, .hljs-addition, .hljs-stream, .hljs-envvar, .apache .hljs-tag, .apache .hljs-cbracket, .tex .hljs-command, .hljs-prompt, .hljs-link_label, .hljs-link_url {color: #e6db74; } .hljs-comment, .hljs-javadoc, .hljs-annotation, .hljs-decorator, .hljs-pi, .hljs-doctype, .hljs-deletion, .hljs-shebang, .apache .hljs-sqbracket, .tex .hljs-formula {color: #75715e; } .coffeescript .javascript, .javascript .xml, .tex .hljs-formula, .xml .javascript, .xml .vbscript, .xml .css, .xml .hljs-cdata, .xml .php, .php .xml {opacity: 0.5; }
+
+/**
+* highlight-js copy
+* https://unpkg.com/highlightjs-copy@1.0.3/dist/highlightjs-copy.min.css
+*/ 
+.hljs-copy-wrapper{position:relative;overflow:hidden}
+.hljs-copy-wrapper:hover .hljs-copy-button,.hljs-copy-button:focus{transform:translateX(0);background-color: #f1e2d7}
+.hljs-copy-button{position:absolute;transform:translateX(calc(100% + 1.125em));top:0;right:0;height:2rem;color:#000;border-radius:.25rem;border:1px solid #333;background-color:#2e3036;}
+.hljs-copy-button:hover{border-color:#ffffff44}
+.hljs-copy-button:active{border-color:#ffffff66}
+.hljs-copy-button[data-copied="true"]{text-indent:0;width:auto;}
+@media(prefers-reduced-motion){.hljs-copy-button{transition:none}}
+.hljs-copy-alert{clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}
