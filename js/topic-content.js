@@ -1,4 +1,5 @@
-document.addEventListener("turbo:load", function() {	
+function topicSC()
+{
 	/* Table of content show hide  */
 	$(".toc_toggle").on("click",function(){
 		var active_text = $(this).text();
@@ -29,46 +30,43 @@ document.addEventListener("turbo:load", function() {
 		document.execCommand('copy');
 		$("#gocopy").remove();
 		xsetting.toast('dark', button.data('text'));
-	})	
-});	
+	})			
+}
 
-document.addEventListener("turbo:load", function() {	
-	Promise.all([ js_stickysidebar ]).then(() => {
+function stickySidebar()
+{
+	/* section */
+	if ($(".topic-section").length > 0) {
 
-		/* section */
-		if ($(".topic-section").length > 0) { 
+		var stickySidebar = new StickySidebar('#content-sidebar', {
+			topSpacing: 10,
+			bottomSpacing: 10,
+			containerSelector: '#main-content',
+			innerWrapperSelector: '.topic-section'
+		});
 
-			var stickySidebar = new StickySidebar('#content-sidebar', {
-				topSpacing: 10,
-				bottomSpacing: 10,
-				containerSelector: '#main-content',
-				innerWrapperSelector: '.topic-section'
-			});
+		/* clone section */
+		var sectionHasClone = false;
+		$(".section-mobile").on("click", function(){
+			if (!sectionHasClone) {
+				$(".section-copy").html($(".topic-section").clone());				
+				sectionHasClone = true;
+			}
 
-			/* clone section */
-			var sectionHasClone = false;
-			$(".section-mobile").on("click", function(){
-				if (!sectionHasClone) {
-					$(".section-copy").html($(".topic-section").clone());				
-					sectionHasClone = true;
-				}
+			/* focus */
+			$(".submenu-link.active").focus();
+		})
+	}	
+}
 
-				// focus
-				$(".submenu-link.active").focus();
-			})
-		}		
-
-	});
-});	
-
-document.addEventListener("turbo:load", function() {
-	Promise.all([ js_highlightjs1,js_highlightjs2,js_highlightjs4  ]).then(() => {
-
+function preCodeHighlight()
+{
+	if ($("pre").length > 0) {
 		/* hljs */
 		hljs.addPlugin(new CopyButtonPlugin());
 		hljs.highlightAll();
 		setTimeout(function(){
-			
+
 			/* line number */
 			hljs.initLineNumbersOnLoad();
 
@@ -95,7 +93,6 @@ document.addEventListener("turbo:load", function() {
 			$(this).parents("pre").removeClass("code-hide");
 			$(this).parents(".hide-box").hide().remove();
 			$(window).resize().scroll();
-		})		
-
-	});
-});		
+		})
+	}	
+}
