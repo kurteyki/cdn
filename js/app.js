@@ -1,3 +1,70 @@
+/* show loading bar when click or submit */
+['turbo:click', 'turbo:submit-start'].forEach(function(e) {
+    window.addEventListener(e, function(){
+        Turbo.navigator.delegate.adapter.showProgressBar();     
+    });
+});
+
+/* disable form input & button when submitted */
+document.addEventListener("turbo:submit-start", ({ target }) => {
+    Turbo.navigator.delegate.adapter.showProgressBar();     
+    for (const field of target.elements) {
+        field.disabled = true
+    }
+});
+
+document.addEventListener("turbo:render", function() {
+
+    var resCodew = Turbo.navigator.currentVisit.response;
+    // console.log(typeof resCodew);
+    // console.log(Turbo.navigator);
+
+    if (typeof resCodew == 'undefined') return;
+
+    /* reload if page is 404 (prevent glithc bug in turbo) */
+    if (resCodew.statusCode == 404) {
+        window.location.href = window.location.href;
+    }
+}); 
+
+document.addEventListener("turbo:load", function() {
+
+	/* load script after turbolink loaded page */
+
+	var base_url = $("meta[name='base_url']").attr('content'),
+	site_url = $("meta[name='site_url']").attr('content'),
+	current_url = $("meta[name='current_url']").attr('content'),
+	isPage = $("meta[name='isPage']").attr('content');
+
+	/* search toggle focus */
+	$('#navSearch').on('shown.bs.collapse', function() {
+		$("#search-navbar input[name='q']").focus();
+	})
+
+	/* enable tooltip */
+	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+	const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+	/* footer collapse */
+	var footerCollapse = false;
+	if (!footerCollapse) {
+		$("#footerToggle").html('<i class="bi bi-plus-square"></i>');		
+		$("#footerToggle").on("click", function() {
+			var button = $(this),
+			collapseFooter = $("#collapseFooter");
+			if (collapseFooter.hasClass('d-none')) {
+				collapseFooter.removeClass('d-none');
+				button.html('<i class="bi bi-dash-square"></i>');
+			}else{
+				collapseFooter.addClass('d-none');
+				button.html('<i class="bi bi-plus-square"></i>');
+			}      
+		});     
+		footerCollapse = true;
+	}    	
+
+}); 
+
 let xsetting = {
 	spinner : ` <div class="spinner-border spinner-border-sm button-spinner" role="status"></div>`,
 	toast : function(status, message, useIcon = true, autohide = true) {
@@ -74,41 +141,3 @@ let xsetting = {
 	}
 
 }  
-
-document.addEventListener("turbo:load", function() {
-
-	/* load script after turbolink loaded page */
-
-	var base_url = $("meta[name='base_url']").attr('content'),
-	site_url = $("meta[name='site_url']").attr('content'),
-	current_url = $("meta[name='current_url']").attr('content'),
-	isPage = $("meta[name='isPage']").attr('content');
-
-	/* search toggle focus */
-	$('#navSearch').on('shown.bs.collapse', function() {
-		$("#search-navbar input[name='q']").focus();
-	})
-
-	/* enable tooltip */
-	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-	const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-	/* footer collapse */
-	var footerCollapse = false;
-	if (!footerCollapse) {
-		$("#footerToggle").html('<i class="bi bi-plus-square"></i>');		
-		$("#footerToggle").on("click", function() {
-			var button = $(this),
-			collapseFooter = $("#collapseFooter");
-			if (collapseFooter.hasClass('d-none')) {
-				collapseFooter.removeClass('d-none');
-				button.html('<i class="bi bi-dash-square"></i>');
-			}else{
-				collapseFooter.addClass('d-none');
-				button.html('<i class="bi bi-plus-square"></i>');
-			}      
-		});     
-		footerCollapse = true;
-	}    	
-
-}); 
