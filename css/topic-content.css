@@ -57,7 +57,12 @@
 #post-content blockquote{background:#f5f6fe;border-left:10px solid #343434;margin-bottom: 1rem;padding:0.5em 10px;quotes:"\201C""\201D""\2018""\2019"}
 #post-content blockquote:before{color:#343434;content:open-quote;font-size:4em;line-height:0.1em;margin-right:0.25em;vertical-align:-0.4em}
 #post-content blockquote p{display:inline}
-.font-content {font-size:18px;line-height:1.6em;letter-spacing:0}
+.font-content {
+  font-size:18px;
+  line-height:1.6em;
+  letter-spacing:0;
+  font-family: var(--bs-body-font-family);
+}
 @media (max-width:768px){
   .font-content{font-size:16px}
 }
