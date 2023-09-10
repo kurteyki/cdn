@@ -1156,7 +1156,7 @@ https://github.com/hotwired/turbo
         top: 0;
         left: 0;
         height: 3px;
-        background: #0076ff;
+        background: #a3a3ff;
         z-index: 9999;
         transition:
           width ${ProgressBar.animationDuration}ms ease-out,
@@ -3362,3 +3362,32 @@ https://github.com/hotwired/turbo
     Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
+
+/* show loading bar when click or submit */
+['turbo:click', 'turbo:submit-start'].forEach(function(e) {
+    window.addEventListener(e, function(){
+        Turbo.navigator.delegate.adapter.showProgressBar();     
+    });
+});
+
+/* disable form input & button when submitted */
+document.addEventListener("turbo:submit-start", ({ target }) => {
+    Turbo.navigator.delegate.adapter.showProgressBar();     
+    for (const field of target.elements) {
+        field.disabled = true
+    }
+});
+
+document.addEventListener("turbo:render", function() {
+
+    var resCodew = Turbo.navigator.currentVisit.response;
+    // console.log(typeof resCodew);
+    // console.log(Turbo.navigator);
+
+    if (typeof resCodew == 'undefined') return;
+
+    /* reload if page is 404 (prevent glithc bug in turbo) */
+    if (resCodew.statusCode == 404) {
+        window.location.href = window.location.href;
+    }
+}); 
